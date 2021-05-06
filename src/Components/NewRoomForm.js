@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export const NewRoomForm = (props) => {
     const [name, setName] = useState('');
-    const [area, setArea] = useState(undefined);
+    const [area, setArea] = useState('');
 
     const handleAreaInput = (e) => {
         const int = parseInt(e.target.value, 10);
@@ -15,6 +15,7 @@ export const NewRoomForm = (props) => {
             props.addNewRoom({name, area});
             setName('');
             setArea('');
+            console.log(name);
         }   else {
             console.log('invalid input');
         }

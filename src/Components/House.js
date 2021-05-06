@@ -5,6 +5,9 @@ export const House = (props) => {
     const { house, updateHouse } = props;
 
     const deleteRoom = (roomId) => {
+        console.log('we got inside deleteRoom function');
+        console.log(roomId);
+        
         const updatedHouse = {
             ...house,
             rooms: house.rooms.filter((x) => x._id !== roomId)
@@ -12,7 +15,11 @@ export const House = (props) => {
         updateHouse(updatedHouse);
     }
 
-    const addNewRoom = (room) => updateHouse({...house, rooms: [...house.rooms, room]});
+    const addNewRoom = (room) => {
+        console.log('we got inside addNewRoom function');
+        console.log(room);
+        updateHouse({...house, rooms: [...house.rooms, room]});
+    }
 
     const rooms = () => (
         <ul>
